@@ -16,13 +16,16 @@ build:
 # Need these up here for conda-smithy to handle them properly.
 requirements:
   host:
-    - python >=3.4
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.4
+    - python >={{ python_min }}
     - colorama
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - colorful
 
